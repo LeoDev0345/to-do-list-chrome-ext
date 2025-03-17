@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Todo List </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Mes tâches</h1>
+      <div class="header-actions">
+        <select id="viewSelector" class="view-selector">
+          <option value="day">Jour</option>
+          <option value="week">Semaine</option>
+        </select>
+        <input type="date" id="dateSelector" class="date-selector">
+        <button id="addTask" class="add-button">+ Nouvelle tâche</button>
+      </div>
+    </header>
+    
+    <div class="tasks-container">
+      <div class="date-header">
+        <span id="selectedDateDisplay"></span>
+      </div>
+      
+      <!-- Vue journalière -->
+      <div id="dayView" class="view-content">
+        <div class="tasks-list" id="tasksList">
+          <!-- Les tâches seront ajoutées ici dynamiquement -->
+        </div>
+      </div>
+
+      <!-- Vue hebdomadaire -->
+      <div id="weekView" class="view-content hidden">
+        <div class="week-navigation">
+          <button id="prevDays" class="nav-button">←</button>
+          <button id="nextDays" class="nav-button">→</button>
+        </div>
+        <div class="week-grid" id="weekGrid">
+          <!-- Les jours de la semaine seront ajoutés ici dynamiquement -->
+        </div>
+      </div>
+
+      <!-- Vue détaillée d'un jour -->
+      <div id="dayDetailView" class="view-content hidden">
+        <div class="day-detail-header">
+          <button id="backToWeek" class="nav-button">← Retour</button>
+          <div class="day-detail-title"></div>
+        </div>
+        <div class="day-detail-tasks"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Template pour une nouvelle tâche -->
+  <template id="taskTemplate">
+    <div class="task-item">
+      <div class="task-content">
+        <input type="checkbox" class="task-checkbox">
+        <input type="text" class="task-text" placeholder="Nouvelle tâche">
+      </div>
+      <button class="delete-task">×</button>
+    </div>
+  </template>
+
+  <!-- Template pour un jour de la semaine -->
+  <template id="dayTemplate">
+    <div class="week-day">
+      <div class="day-header">
+        <span class="day-name"></span>
+        <span class="day-date"></span>
+      </div>
+      <div class="day-tasks"></div>
+    </div>
+  </template>
+
+  <script src="popup.js"></script>
+</body>
+</html> 

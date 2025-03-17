@@ -1,0 +1,16 @@
+
+{
+  "manifest_version": 3,
+  "name": "Ma Todo List",
+  "version": "1.0",
+  "description": "ma to do list pour chrome",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/to-do-list.png",
+      "48": "icons/to-do-list.png",
+      "128": "icons/to-do-list.png"
+    }
+  },
+  "permissions": ["storage"]
+} 
